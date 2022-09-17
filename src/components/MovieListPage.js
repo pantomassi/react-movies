@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 
-// https://www.omdbapi.com/?apikey=c85e8068&s=...
-
 function MovieListPage() {
 
     const [searchTerm, setSearchTerm] = useState("")
@@ -30,7 +28,7 @@ function MovieListPage() {
     }
 
     const fetchMovieTitles = (movieTitle) => {
-        const url = `https://www.omdbapi.com/?apikey=c85e8068&s=${movieTitle}`
+        const url = `https://www.omdbapi.com/?apikey=XXXXXXXX&s=${movieTitle}`
 
         // saving searched title, the one also passed to fetch API, to the local storage
         localStorage.setItem("searchTerm", movieTitle)
@@ -49,7 +47,6 @@ function MovieListPage() {
             })
     }
 
-    // html tags in react are not closed the same way as in pure html: <img src=... /> instead of <img src=..>sth</img>
 
     const allMovies = movies.map(movie => {
         return (
@@ -112,6 +109,5 @@ function MovieListPage() {
 // * split totally unrelated pieces of state into multiple useStates with their own setFunctions, instead of having all of them under one useState({key1:val1, key2:val2, ...});  ** initial value of UseState can be various types - numbers, strings, arrays, objects,... ;   *** whenever any piece of state is changed with setSomething, the whole return() is being re-rendered
 
 
-// localStorage - part of JS. It's a key:value storage in the browser theat enables to save data from previous requests (useful with page refreshes, reopening the browser etc.). Items in the localStorage are accessible from any page
 
 export default MovieListPage
