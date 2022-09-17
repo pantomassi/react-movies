@@ -2,7 +2,6 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 // component for another API call (to a different API url - one retrieving a specific movie's details)
-// https://www.omdbapi.com/?apikey=c85e8068&i=...
 
 function MovieDetailPage() {
 
@@ -18,7 +17,7 @@ function MovieDetailPage() {
 
     // fetch API
     const fetchMovieDetailsById = (movieId) => {
-        const url = `https://www.omdbapi.com/?apikey=c85e8068&i=${movieId}`
+        const url = `https://www.omdbapi.com/?apikey=XXXXXXXX&i=${movieId}`
 
         fetch(url)
             .then(response => response.json())
